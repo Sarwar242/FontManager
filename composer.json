@@ -1,0 +1,25 @@
+{
+    "name": "sarwar/font-manager",
+    "description": "Font Management System",
+    "type": "project",
+    "require": {
+        "php": "^8.1",
+        "ext-pdo": "*",
+        "ext-fileinfo": "*",
+        "monolog/monolog": "^2.3",
+        "league/config": "^1.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "squizlabs/php_codesniffer": "^3.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "FontManager\\": "src/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit tests",
+        "lint": "phpcs src"
+    }
+}
