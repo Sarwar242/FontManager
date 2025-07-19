@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 07, 2025 at 07:33 AM
+-- Generation Time: Jul 19, 2025 at 10:06 AM
 -- Server version: 8.0.30
--- PHP Version: 8.1.10
+-- PHP Version: 8.3.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,11 +42,15 @@ CREATE TABLE `fonts` (
 --
 
 INSERT INTO `fonts` (`id`, `filename`, `original_name`, `font_family`, `font_style`, `upload_path`, `created_at`) VALUES
-(10, '67f2adb68ae9b.ttf', 'Roboto-Italic.ttf', 'Unknown', 'Regular', './uploads/fonts/fonts/67f2adb68ae9b.ttf', '2025-04-06 16:37:10'),
-(12, '67f2bd34d8c87.ttf', 'Roboto Italic', 'Roboto', 'Regular', './uploads/fonts/fonts/67f2bd34d8c87.ttf', '2025-04-06 17:43:16'),
-(13, '67f2bd4344c37.ttf', 'Winky Sans Italic', 'Winky Sans', 'Regular', './uploads/fonts/fonts/67f2bd4344c37.ttf', '2025-04-06 17:43:31'),
-(14, '67f37dcf88af4.ttf', 'Winky Sans Italic', 'Winky Sans', 'Regular', './uploads/fonts/fonts/67f37dcf88af4.ttf', '2025-04-07 07:25:03'),
-(15, '67f37dd5ce60a.ttf', 'Winky Sans Regular', 'Winky Sans', 'Regular', './uploads/fonts/fonts/67f37dd5ce60a.ttf', '2025-04-07 07:25:09');
+(20, '687b4f9c053b8.ttf', 'Bitcount Regular', 'Bitcount', 'Regular', './uploads/fonts/fonts/687b4f9c053b8.ttf', '2025-07-19 07:56:12'),
+(21, '687b50a5247b4.ttf', 'Roboto Condensed Bold', 'Roboto Condensed', 'Regular', './uploads/fonts/fonts/687b50a5247b4.ttf', '2025-07-19 08:00:37'),
+(23, '687b50cb6dffb.ttf', 'Roboto SemiCondensed Thin Italic', 'Roboto SemiCondensed Thin', 'Regular', './uploads/fonts/fonts/687b50cb6dffb.ttf', '2025-07-19 08:01:15'),
+(24, '687b5141036f3.ttf', 'Hind Siliguri Bold', 'Hind Siliguri', 'Regular', './uploads/fonts/fonts/687b5141036f3.ttf', '2025-07-19 08:03:13'),
+(25, '687b5203100a1.ttf', 'Montserrat Thin', 'Montserrat Thin', 'Regular', './uploads/fonts/fonts/687b5203100a1.ttf', '2025-07-19 08:06:27'),
+(26, '687b522846bcf.ttf', 'Poppins Italic', 'Poppins', 'Regular', './uploads/fonts/fonts/687b522846bcf.ttf', '2025-07-19 08:07:04'),
+(27, '687b52436e8d3.ttf', 'Poppins Bold', 'Poppins', 'Regular', './uploads/fonts/fonts/687b52436e8d3.ttf', '2025-07-19 08:07:31'),
+(28, '687b529f707b6.ttf', 'Roboto Slab Regular', 'Roboto Slab', 'Regular', './uploads/fonts/fonts/687b529f707b6.ttf', '2025-07-19 08:09:03'),
+(29, '687b530ed6564.ttf', 'Boldonse Regular', 'Boldonse', 'Regular', './uploads/fonts/fonts/687b530ed6564.ttf', '2025-07-19 08:10:54');
 
 -- --------------------------------------------------------
 
@@ -65,9 +69,9 @@ CREATE TABLE `font_groups` (
 --
 
 INSERT INTO `font_groups` (`id`, `name`, `created_at`) VALUES
-(5, 'test', '2025-04-07 06:38:50'),
-(6, 'test', '2025-04-07 06:51:54'),
-(7, 'sarwar2', '2025-04-07 07:26:02');
+(12, 's2', '2025-07-19 09:20:49'),
+(13, 's1', '2025-07-19 09:20:57'),
+(15, 'D2', '2025-07-19 09:54:49');
 
 -- --------------------------------------------------------
 
@@ -85,13 +89,13 @@ CREATE TABLE `font_group_fonts` (
 --
 
 INSERT INTO `font_group_fonts` (`group_id`, `font_id`) VALUES
-(5, 10),
-(5, 12),
-(6, 12),
-(6, 13),
-(7, 13),
-(7, 14),
-(7, 15);
+(12, 21),
+(12, 23),
+(15, 26),
+(13, 27),
+(15, 27),
+(12, 28),
+(13, 29);
 
 --
 -- Indexes for dumped tables
@@ -124,13 +128,13 @@ ALTER TABLE `font_group_fonts`
 -- AUTO_INCREMENT for table `fonts`
 --
 ALTER TABLE `fonts`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `font_groups`
 --
 ALTER TABLE `font_groups`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Constraints for dumped tables
