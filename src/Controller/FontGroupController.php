@@ -32,7 +32,7 @@ class FontGroupController extends BaseController {
             $this->validateFontExistence($data['fontIds']);
 
             $result = $this->fontGroupModel->create([
-                'name' => $data['name'] ?? 'Unnamed Group',
+                'name' => $data['title'] ?? 'Unnamed Group',
                 'fonts' => $data['fontIds']
             ]);
 
@@ -97,7 +97,7 @@ class FontGroupController extends BaseController {
             $this->validateFontExistence($data['fontIds']);
 
             $updated = $this->fontGroupModel->update($groupId, [
-                'name' => $data['name'] ?? $existingGroup['name'],
+                'name' => $data['title'] ?? $existingGroup['name'],
                 'fonts' => $data['fontIds']
             ]);
 

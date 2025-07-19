@@ -18,13 +18,15 @@ Font Manager is a simple yet powerful application to help designers and develope
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/FontManager.git
+git clone https://github.com/sarwar242/FontManager.git
 
 # Navigate to the project directory
 cd FontManager
 
 # Install dependencies
 composer install
+# run the api
+php -S localhost:8000 -t public
 ```
 
 ## Usage

@@ -24,22 +24,36 @@ class FontController extends BaseController {
     /**
      * Handle font upload
      * 
-     * @param array $files Uploaded files
+     * @param array $files Uploaded files array containing 'font' key
+     * @param string|null $name Font display name
+     * @param string|null $fontFamily CSS font-family name
      * @return void
+     * @throws \InvalidArgumentException When required parameters are missing
      */
-    public function upload(array $files, $name,  $fontFamily): void {
-        if (empty($files['font'])) {
-            $this->errorResponse( 'No font file uploaded', 400);
+    public function upload(array $files, ?string $name, ?string $fontFamily): void {
+        // Validate file upload
+        if (!isset($files['font']) || empty($files['font'])) {
+            $this->errorResponse('No font file uploaded', 400);
+            return;
         }
-        if (empty($files['font'])) {
-            $this->validationErrorResponse([
-                'font' => 'No file uploaded'
-            ]);
+
+        // Validate required string parameters
+        $errors = [];
+        if (empty($name)) {
+            $errors['name'] = 'Font name is required';
+        }
+        if (empty($fontFamily)) {
+            $errors['font_family'] = 'Font family is required';
+        }
+
+        if (!empty($errors)) {
+            $this->validationErrorResponse($errors);
+            return;
         }
 
         try {
             $result = $this->uploadService->uploadFont($files['font'], $name, $fontFamily);
-
+            
             if ($result['success']) {
                 $this->jsonResponse($result);
             } else {
